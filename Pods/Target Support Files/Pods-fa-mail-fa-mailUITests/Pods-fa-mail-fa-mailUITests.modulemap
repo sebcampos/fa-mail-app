@@ -1,0 +1,6 @@
+framework module Pods_fa_mail_fa_mailUITests {
+  umbrella header "Pods-fa-mail-fa-mailUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

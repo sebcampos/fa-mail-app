@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		639A1CD75A6B5A4CA14DA128 /* Pods_fa_mail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28E28D05AEC83DC79CDEB6A /* Pods_fa_mail.framework */; };
+		7949AD5405821A93EA8FC9E3 /* Pods_fa_mailTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4ECC8EE4BCB85EF51733391 /* Pods_fa_mailTests.framework */; };
+		9AB7DD4F921A3260A8FF651B /* Pods_fa_mail_fa_mailUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A161384A484538C328215C /* Pods_fa_mail_fa_mailUITests.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		B96C193D2D24D448008C8271 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,9 +30,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B15431575FE3E4DDD0820A3 /* Pods-fa-mail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fa-mail.release.xcconfig"; path = "Target Support Files/Pods-fa-mail/Pods-fa-mail.release.xcconfig"; sourceTree = "<group>"; };
+		3CA0CE507DB35C82B9E8C483 /* Pods-fa-mail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fa-mail.debug.xcconfig"; path = "Target Support Files/Pods-fa-mail/Pods-fa-mail.debug.xcconfig"; sourceTree = "<group>"; };
+		A4ECC8EE4BCB85EF51733391 /* Pods_fa_mailTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fa_mailTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7A161384A484538C328215C /* Pods_fa_mail_fa_mailUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fa_mail_fa_mailUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96C192C2D24D445008C8271 /* fa-mail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fa-mail.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96C193C2D24D448008C8271 /* fa-mailTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fa-mailTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96C19462D24D448008C8271 /* fa-mailUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fa-mailUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF3A7338AF8004D405C9F3AE /* Pods-fa-mail-fa-mailUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fa-mail-fa-mailUITests.release.xcconfig"; path = "Target Support Files/Pods-fa-mail-fa-mailUITests/Pods-fa-mail-fa-mailUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CFEF66E2CD90C46E0C935678 /* Pods-fa-mailTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fa-mailTests.debug.xcconfig"; path = "Target Support Files/Pods-fa-mailTests/Pods-fa-mailTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DA124DDC9CFFCFC127001401 /* Pods-fa-mail-fa-mailUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fa-mail-fa-mailUITests.debug.xcconfig"; path = "Target Support Files/Pods-fa-mail-fa-mailUITests/Pods-fa-mail-fa-mailUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E28E28D05AEC83DC79CDEB6A /* Pods_fa_mail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fa_mail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA77195601348423971693A3 /* Pods-fa-mailTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fa-mailTests.release.xcconfig"; path = "Target Support Files/Pods-fa-mailTests/Pods-fa-mailTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -52,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639A1CD75A6B5A4CA14DA128 /* Pods_fa_mail.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7949AD5405821A93EA8FC9E3 /* Pods_fa_mailTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AB7DD4F921A3260A8FF651B /* Pods_fa_mail_fa_mailUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +97,8 @@
 				B96C193F2D24D448008C8271 /* fa-mailTests */,
 				B96C19492D24D448008C8271 /* fa-mailUITests */,
 				B96C192D2D24D445008C8271 /* Products */,
+				E0F6209C43C398CB5D4133FF /* Pods */,
+				E957FF30F14478513F45C06C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +112,29 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		E0F6209C43C398CB5D4133FF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3CA0CE507DB35C82B9E8C483 /* Pods-fa-mail.debug.xcconfig */,
+				0B15431575FE3E4DDD0820A3 /* Pods-fa-mail.release.xcconfig */,
+				DA124DDC9CFFCFC127001401 /* Pods-fa-mail-fa-mailUITests.debug.xcconfig */,
+				BF3A7338AF8004D405C9F3AE /* Pods-fa-mail-fa-mailUITests.release.xcconfig */,
+				CFEF66E2CD90C46E0C935678 /* Pods-fa-mailTests.debug.xcconfig */,
+				FA77195601348423971693A3 /* Pods-fa-mailTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E957FF30F14478513F45C06C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E28E28D05AEC83DC79CDEB6A /* Pods_fa_mail.framework */,
+				B7A161384A484538C328215C /* Pods_fa_mail_fa_mailUITests.framework */,
+				A4ECC8EE4BCB85EF51733391 /* Pods_fa_mailTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -99,6 +142,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B96C19502D24D448008C8271 /* Build configuration list for PBXNativeTarget "fa-mail" */;
 			buildPhases = (
+				21FBC1E41167516B811212C0 /* [CP] Check Pods Manifest.lock */,
 				B96C19282D24D445008C8271 /* Sources */,
 				B96C19292D24D445008C8271 /* Frameworks */,
 				B96C192A2D24D445008C8271 /* Resources */,
@@ -111,8 +155,6 @@
 				B96C192E2D24D445008C8271 /* fa-mail */,
 			);
 			name = "fa-mail";
-			packageProductDependencies = (
-			);
 			productName = "fa-mail";
 			productReference = B96C192C2D24D445008C8271 /* fa-mail.app */;
 			productType = "com.apple.product-type.application";
@@ -121,6 +163,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B96C19532D24D448008C8271 /* Build configuration list for PBXNativeTarget "fa-mailTests" */;
 			buildPhases = (
+				5D4CADDFDCF3E1B27F14AC77 /* [CP] Check Pods Manifest.lock */,
 				B96C19382D24D448008C8271 /* Sources */,
 				B96C19392D24D448008C8271 /* Frameworks */,
 				B96C193A2D24D448008C8271 /* Resources */,
@@ -134,8 +177,6 @@
 				B96C193F2D24D448008C8271 /* fa-mailTests */,
 			);
 			name = "fa-mailTests";
-			packageProductDependencies = (
-			);
 			productName = "fa-mailTests";
 			productReference = B96C193C2D24D448008C8271 /* fa-mailTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -144,6 +185,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B96C19562D24D448008C8271 /* Build configuration list for PBXNativeTarget "fa-mailUITests" */;
 			buildPhases = (
+				7E402A685E8510A6911432AD /* [CP] Check Pods Manifest.lock */,
 				B96C19422D24D448008C8271 /* Sources */,
 				B96C19432D24D448008C8271 /* Frameworks */,
 				B96C19442D24D448008C8271 /* Resources */,
@@ -157,8 +199,6 @@
 				B96C19492D24D448008C8271 /* fa-mailUITests */,
 			);
 			name = "fa-mailUITests";
-			packageProductDependencies = (
-			);
 			productName = "fa-mailUITests";
 			productReference = B96C19462D24D448008C8271 /* fa-mailUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -175,6 +215,7 @@
 				TargetAttributes = {
 					B96C192B2D24D445008C8271 = {
 						CreatedOnToolsVersion = 16.2;
+						LastSwiftMigration = 1620;
 					};
 					B96C193B2D24D448008C8271 = {
 						CreatedOnToolsVersion = 16.2;
@@ -195,6 +236,9 @@
 			);
 			mainGroup = B96C19232D24D445008C8271;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B96C19592D251925008C8271 /* XCRemoteSwiftPackageReference "mailcore2" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B96C192D2D24D445008C8271 /* Products */;
 			projectDirPath = "";
@@ -230,6 +274,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21FBC1E41167516B811212C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fa-mail-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D4CADDFDCF3E1B27F14AC77 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fa-mailTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E402A685E8510A6911432AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fa-mail-fa-mailUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B96C19282D24D445008C8271 /* Sources */ = {
@@ -390,9 +503,11 @@
 		};
 		B96C19512D24D448008C8271 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CA0CE507DB35C82B9E8C483 /* Pods-fa-mail.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fa-mail/Preview Content\"";
@@ -411,6 +526,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.friendlyautomations.fa-mail";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "fa-mail/fa-mail-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -418,9 +535,11 @@
 		};
 		B96C19522D24D448008C8271 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B15431575FE3E4DDD0820A3 /* Pods-fa-mail.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fa-mail/Preview Content\"";
@@ -439,6 +558,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.friendlyautomations.fa-mail";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "fa-mail/fa-mail-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -446,6 +566,7 @@
 		};
 		B96C19542D24D448008C8271 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFEF66E2CD90C46E0C935678 /* Pods-fa-mailTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -464,6 +585,7 @@
 		};
 		B96C19552D24D448008C8271 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA77195601348423971693A3 /* Pods-fa-mailTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -482,6 +604,7 @@
 		};
 		B96C19572D24D448008C8271 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA124DDC9CFFCFC127001401 /* Pods-fa-mail-fa-mailUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -498,6 +621,7 @@
 		};
 		B96C19582D24D448008C8271 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF3A7338AF8004D405C9F3AE /* Pods-fa-mail-fa-mailUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -552,6 +676,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B96C19592D251925008C8271 /* XCRemoteSwiftPackageReference "mailcore2" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MailCore/mailcore2";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = B96C19242D24D445008C8271 /* Project object */;
 }
