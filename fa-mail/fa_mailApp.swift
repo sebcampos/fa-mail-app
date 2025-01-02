@@ -11,6 +11,7 @@ import SwiftUI
 class EmailDetailViewController: UIViewController {
     
     var email: MCOIMAPMessage?
+    var fetchContentClosure: ((@escaping (String) -> Void) -> Void)?
     
     private let subjectLabel = UILabel()
     private let fromLabel = UILabel()
@@ -67,9 +68,8 @@ class EmailDetailViewController: UIViewController {
         fromLabel.text = "From: \(email.header.sender.displayName ?? "Unknown Sender")"
         dateLabel.text = "Date: \(email.header.date?.description ?? "Unknown Date")"
         
-        // Fetch the body (if available) and display it
-        useImapFetchContent(uidToFetch: email.uid) { [weak self] body in
-            // Update the bodyTextView on the main thread
+        // Fetch the body using the passed closure
+        fetchContentClosure? { [weak self] body in
             DispatchQueue.main.async {
                 self?.bodyTextView.text = body
             }
@@ -144,9 +144,12 @@ class EmailViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let email = emails[indexPath.row]
         
-        // Initialize the EmailDetailViewController and pass the selected email
+        // Initialize the EmailDetailViewController and pass the selected email and fetch method
         let detailViewController = EmailDetailViewController()
         detailViewController.email = email
+        detailViewController.fetchContentClosure = { [weak self] completion in
+            self?.useImapFetchContent(uidToFetch: email.uid, completion: completion)
+        }
         
         // Push the detail view controller
         navigationController?.pushViewController(detailViewController, animated: true)
