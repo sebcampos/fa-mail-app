@@ -12,6 +12,7 @@ class EmailDetailViewController: UIViewController {
     
     var email: MCOIMAPMessage?
     var fetchContentClosure: ((@escaping (String) -> Void) -> Void)?
+    var deleteEmailClosure: ((MCOIMAPMessage, @escaping (Bool) -> Void) -> Void)?
     
     private let subjectLabel = UILabel()
     private let fromLabel = UILabel()
@@ -23,6 +24,7 @@ class EmailDetailViewController: UIViewController {
         self.title = "Email Detail"
         setupViews()
         displayEmailDetails()
+        addDeleteButton()
     }
 
     func setupViews() {
@@ -75,11 +77,56 @@ class EmailDetailViewController: UIViewController {
             }
         }
     }
+    
+    
+    func addDeleteButton() {
+        let deleteButton = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(deleteEmail))
+        deleteButton.tintColor = .red
+        navigationItem.rightBarButtonItem = deleteButton
+    }
+
+    @objc func deleteEmail() {
+        guard let email = email else { return }
+
+        // Call the delete closure to delete the email
+        deleteEmailClosure?(email) { [weak self] success in
+            if success {
+                // If deletion is successful, pop the current view controller
+                self?.navigationController?.popViewController(animated: true)
+            } else {
+                // Handle the error or show an alert to the user
+                print("Failed to delete email.")
+            }
+        }
+    }
+    
 }
 
 class EmailViewController: UITableViewController {
     var emails: [MCOIMAPMessage] = []
     var imapSession: MCOIMAPSession!
+    var totalInboxEmails: Int = 0
+    
+    func getNumberOfEmailsForFolder(withFolder: String, completion: @escaping (Int) -> Void) {
+        let folderInfoOperation = imapSession.folderInfoOperation(withFolder)
+        
+        folderInfoOperation?.start { error, folderInfo in
+            if let error = error {
+                print("Error fetching folder info: \(error)")
+                completion(0) // Return 0 in case of error
+                return
+            }
+            
+            guard let folderInfo = folderInfo else {
+                print("No folder info found.")
+                completion(0) // Return 0 if no folder info
+                return
+            }
+            
+            let emailCount = Int(folderInfo.messageCount)
+            completion(emailCount) // Return the actual email count
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,15 +136,21 @@ class EmailViewController: UITableViewController {
         imapSession.password = "WendyM1lo7"
         imapSession.port = 993
         imapSession.connectionType = .TLS
-        
+        getNumberOfEmailsForFolder(withFolder: "INBOX") { emailCount in
+            print("Inbox email count: \(emailCount)")
+            self.totalInboxEmails = emailCount
+            
+            // Proceed with any logic that depends on the email count
+            self.fetchEmails()
+        }
+           
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "EmailCell")
     
-        fetchEmails()
     }
 
     func fetchEmails() {
         let folder = "INBOX"
-        let fetchOperation = imapSession.fetchMessagesByNumberOperation(withFolder: folder, requestKind: .headers, numbers: MCOIndexSet(range: MCORange(location: 1, length: 2)))
+        let fetchOperation = imapSession.fetchMessagesByNumberOperation(withFolder: folder, requestKind: .headers, numbers: MCOIndexSet(range: MCORange(location: 1, length: UInt64(self.totalInboxEmails) - 1)))
 
         fetchOperation?.start { [weak self] error, messages, vanishedMessages in
             if let error = error {
@@ -124,8 +177,40 @@ class EmailViewController: UITableViewController {
             // Get the plain text body
             let body = messageParser.plainTextBodyRenderingAndStripWhitespace(false)
             
+            
             // Return the body via the completion handler
             completion(body ?? "No body content")
+        }
+    }
+    
+    func deleteEmail(email: MCOIMAPMessage, completion: @escaping (Bool) -> Void) {
+        let folder = "INBOX"
+        
+        // Step 1: Mark the email as deleted
+        let storeFlagsOperation = imapSession.storeFlagsOperation(withFolder: folder, uids: MCOIndexSet(index: UInt64(email.uid)), kind: .add, flags: .deleted)
+        
+        storeFlagsOperation?.start { error in
+            if let error = error {
+                print("Error marking email for deletion: \(error)")
+                return
+            }
+
+            // Step 2: Expunge the folder to permanently delete the email
+            let expungeOperation = self.imapSession.expungeOperation(folder)
+            expungeOperation?.start { expungeError in
+                if let expungeError = expungeError {
+                    print("Error expunging folder: \(expungeError)")
+                    completion(false)
+                } else {
+                    print("Email deleted successfully")
+                    // Optionally, remove the email from your `emails` array and reload the table
+                    if let index = self.emails.firstIndex(of: email) {
+                        self.emails.remove(at: index)
+                        self.tableView.reloadData()
+                    }
+                    completion(true)
+                }
+            }
         }
     }
 
@@ -147,8 +232,14 @@ class EmailViewController: UITableViewController {
         // Initialize the EmailDetailViewController and pass the selected email and fetch method
         let detailViewController = EmailDetailViewController()
         detailViewController.email = email
+        
+        // adding fetch and delete closures
         detailViewController.fetchContentClosure = { [weak self] completion in
             self?.useImapFetchContent(uidToFetch: email.uid, completion: completion)
+        }
+        
+        detailViewController.deleteEmailClosure = { [weak self] emailToDelete, completion in
+            self?.deleteEmail(email: emailToDelete, completion: completion)
         }
         
         // Push the detail view controller
